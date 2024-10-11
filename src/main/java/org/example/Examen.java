@@ -13,6 +13,7 @@ public class Examen implements Serializable {
     private LocalDateTime fecha;
     private List<String> participantes;
 
+    // es importante tener constructor por defecto, getters y setters de los datos y toString()
     public Examen(){
 
     }

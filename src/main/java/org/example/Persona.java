@@ -3,7 +3,7 @@ package org.example;
 import jakarta.json.bind.annotation.JsonbPropertyOrder;
 import java.io.Serializable;
 
-// TINEES QUE DECIRLE AL JSONB UN ORDEN EN EL OBJETO QUE SE SERIALIZA
+// CON ESTO LE DECIMOS A JSONB UN ORDEN EN EL OBJETO QUE SE SERIALIZA
 @JsonbPropertyOrder({"nome", "idade", "cidade"})
 public class Persona implements Serializable {
 

@@ -58,6 +58,7 @@ public class ExamenMain {
 
         System.out.println();
         String jsonArch;
+
         //se inicia el proceso contrario: se accede al archivo para recuperar el String JSON
         try {
             jsonArch = Files.readString(p);
