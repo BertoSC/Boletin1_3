@@ -28,7 +28,7 @@ public class ExamenMain {
         // con esta clase aplicamos formato al JSON, para especificar si los datos serializados se formatean o no con saltos de línea y sangría
         JsonbConfig config = new JsonbConfig().withFormatting(true);
 
-        // para aplicar la congiguración tenemos que usar newBuilder(), no create(), y aplicar la config con withConfig(instancia config) y build()
+        // para aplicar la configuración tenemos que usar newBuilder(), no create(), y encadenar con withConfig(pasarle la instancia config) y build()
         Jsonb jsonb = JsonbBuilder.newBuilder().withConfig(config).build();
 
         //usamos toJson para iniciar la serialización del objeto, devuelve un String
@@ -41,6 +41,7 @@ public class ExamenMain {
         try (var f = Files.newBufferedWriter(p)) {
             f.write(strJson);
         } catch (IOException e) {
+            System.out.println("ERROR: problema de escritura");
             throw new RuntimeException(e);
         }
 
@@ -53,6 +54,7 @@ public class ExamenMain {
                 System.out.println(line);
             }
         } catch (IOException e) {
+            System.out.println("ERROR: problema de lectura");
             throw new RuntimeException(e);
         }
 
@@ -63,6 +65,7 @@ public class ExamenMain {
         try {
             jsonArch = Files.readString(p);
         } catch (IOException e) {
+            System.out.println("ERROR: problema de lectura");
             throw new RuntimeException(e);
         }
 
