@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
+// con esta etiqueta podemos indicarle a JsonB el orden que queramos en los parámetros de los objetos
 @JsonbPropertyOrder({"materia", "fecha", "participantes"})
 public class Examen implements Serializable {
     private String materia;

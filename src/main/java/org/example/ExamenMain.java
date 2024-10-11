@@ -55,17 +55,18 @@ public class ExamenMain {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        System.out.println();
 
+        System.out.println();
+        String jsonArch;
         //se inicia el proceso contrario: se accede al archivo para recuperar el String JSON
         try {
-            String jsonArch = Files.readString(p);
+            jsonArch = Files.readString(p);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
-        //se crea un objeto mediante fromJson, para deserializar el Examen inicial y crear un nuevo Examen con los datos del archivo
-        Examen otroEx = jsonb.fromJson(strJson, Examen.class);
+        //se usa fromJson para deserializar el Examen inicial y crear un nuevo Examen con los datos del archivo
+        Examen otroEx = jsonb.fromJson(jsonArch, Examen.class);
 
         //se imprime por pantalla el nuevo objeto construido
         System.out.println("Nuevo objeto Examen construido con la info del archivo JSON: ");
